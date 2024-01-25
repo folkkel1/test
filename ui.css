@@ -1,0 +1,343 @@
+/* ส่วนหัวของเว็บไซต์ */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+}
+
+
+/* หัวข้อหลักของเว็บไซต์ */
+.header h1 {
+    margin: 0;
+    color: #007BFF; /* สีของข้อความ */
+    font-size: 24px; /* ขนาดของข้อความ */
+}
+
+/* ปุ่มเพิ่มข่าว */
+.add-news-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ตารางแสดงข่าว */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* หัวข้อของตาราง */
+th {
+    background-color: #007BFF; /* สีพื้นหลังสำหรับหัวข้อตาราง */
+    color: white;
+    padding: 10px;
+}
+
+/* แถวข้อมูลในตาราง */
+td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+/* ส่วนหัวของตาราง */
+th {
+    text-align:center ; /* จัดเนื้อหาใน th ตรงกลาง */
+}
+
+/* แถวข้อมูลในตาราง */
+td {
+    text-align: center; /* จัดเนื้อหาใน td ตรงกลาง */
+}
+
+/* ตารางแสดงข่าว */
+table {
+    margin: 0 auto; /* ทำให้ตารางอยู่ตรงกลาง */
+    width: 80%; /* กำหนดความกว้างของตาราง */
+}
+
+/* สไตล์สำหรับ toggle switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* ซ่อน checkbox ที่ใช้สำหรับ toggle */
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* สไตล์สำหรับ slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* รูปแบบของ slider ที่มีมุมโค้ง */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto; /* จัดให้ modal อยู่ตรงกลาง */
+    padding: 0; /* ลบ padding ออก */
+    border: 1px solid #888; /* สามารถปรับหรือลบบรรทัดนี้ได้ถ้าไม่ต้องการขอบ */
+    width: 50%; /* ปรับความกว้างตามต้องการ */
+    max-width: 600px; /* กำหนดขนาดสูงสุด */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style the header with a blue background color and a white text color */
+/* Modal Header Styling */
+.modal-header {
+    background-color: #007BFF; /* สีพื้นหลังของส่วนหัว */
+    color: white;
+    padding: 10px; /* ปรับ padding ตามความต้องการ */
+    text-align: left;
+    width: 97%; /* ให้ส่วนหัวขยายเต็ม modal */
+}
+.modal-header h2 {
+    margin: 0; /* Removes default margin */
+    font-size: 1.5em; /* Adjust the size as needed */
+}
+
+.modal-field {
+    display: flex; /* ใช้ flexbox เพื่อจัดวาง label และ input */
+    align-items: center; /* จัดให้องค์ประกอบอยู่ตรงกลางในแนวตั้ง */
+    margin-bottom: 15px; /* ระยะห่างระหว่างแต่ละ field */
+}
+
+
+/* Aligns text and elements within each modal field */
+
+.modal-field button {
+    display: block; /* Makes each element take its own line */
+    margin: 0 auto; /* Centers the element within the modal field */
+    text-align: center; /* Centers the text */
+}
+
+.modal-label {
+    color: #0000ff; /* สีน้ำเงิน */
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.required {
+    color: #ff0000; /* สีแดง */
+}
+input[type="text"], textarea {
+    flex-grow: 1; /* ให้ input และ textarea ขยายเต็มพื้นที่ที่เหลือ */
+    margin-left: 10px; /* ระยะห่างระหว่าง label และ input */
+}
+
+#modalNameNews, #modalDetail {
+    border: 1px solid #ccc; /* Adds a border to the input and textarea */
+    padding: 10px; /* Adds some padding inside the inputs */
+    margin-top: 5px; /* Adds a little space above the inputs */
+    width: calc(100% - 22px); /* Adjusts width to account for padding and border */
+}
+
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #007BFF;
+    color: white;
+}
+
+
+
+/* Toggle Switch */
+/* The switch - the box around the slider */
+/* Status switch specific style */
+.switch {
+    margin-top: 5px; /* Adds a little space above the switch */
+}
+
+button {
+    background-color: #2601f5; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Adds space above the button */
+}
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50; /* Green background for checked state */
+}
+/* Optional: Adjust the color when the switch has focus or when hovering over it */
+input:focus + .slider,
+input:hover + .slider:before {
+    box-shadow: 0 0 1px #4CAF50; /* Green shadow to match the slider color */
+}
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Button */
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 80%; /* Increases width on smaller screens for better readability */
+    }
+}
+
+input[readonly], textarea[readonly] {
+    background-color: #e0e0e0; /* สีพื้นหลังทึบ */
+    color: #707070; /* สีตัวอักษรที่ต่างออกไป */
+    /* สามารถเพิ่มรูปแบบเพิ่มเติมได้หากต้องการ */
+}
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px; /* หรือปรับตามที่คุณต้องการ */
+    margin: 0 4px; /* ระยะห่างรอบปุ่ม */
+}
+.view-icon i,
+.edit-icon i {
+    color: #007BFF;
+}
+
+/* สีแดงสำหรับไอคอน 'delete' */
+.delete-icon i {
+    color: #FF0000;
+}
+/* ปรับขนาดไอคอนถ้าต้องการ */
+.icon-button i {
+    font-size: 1em; /* หรือตามที่คุณต้องการ */
+}
+
+/* สไตล์สำหรับหัวข้อข่าวประชาสัมพันธ์ */
+.news-heading h2 {
+    text-align: left; /* หรือ center ถ้าคุณต้องการจัดกลาง */
+    color: #007BFF; /* สีของข้อความ */
+    font-size: 24px; /* ขนาดของข้อความ */
+    margin-bottom: 20px; /* ระยะห่างจากตาราง */
+}

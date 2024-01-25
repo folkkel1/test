@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ui.css"> <!-- เรียกใช้ไฟล์ CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>รายการข่าวประชาสัมพันธ์</title>
+</head>
+<body>
+    <div class="news-heading">
+        <h2>ข่าวประชาสัมพันธ์</h2>
+    </div>
+    <div class="header"> <!-- ส่วนหัวของเว็บไซต์ -->
+        <h1>รายการข่าวประชาสัมพันธ์</h1> <!-- หัวข้อหลักของเว็บไซต์ -->
+        <button class="add-news-btn">เพิ่มข่าว</button> <!-- ปุ่มเพิ่มข่าว -->
+    </div>
+    <table> <!-- ตารางแสดงข่าว -->
+        <thead> <!-- ส่วนหัวของตาราง -->
+            <tr>
+                <th></th>
+                <th>ลำดับ</th>
+                <th>ชื่อเรื่อง</th>
+                <th>วันที่สร้าง</th>
+                <th>จัดการ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- ส่วนของข้อมูลข่าวจะถูกเพิ่มเข้ามาที่นี่จาก JavaScript -->
+        </tbody>
+    </table>
+
+    <!-- Modal สำหรับแสดงรายละเอียดข่าว -->
+    <div id="newsDetailModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>รายละเอียดข่าวประชาสัมพันธ์</h2>
+            </div>
+            <form>
+                <div class="modal-field">
+                    <label for="modalNameNews" class="modal-label">ชื่อเรื่อง<span class="required">*</span>:</label>
+                    <input type="text" id="modalNameNews" name="modalNameNews" required readonly>
+                </div>
+                <div class="modal-field">
+                    <label for="modalDetail" class="modal-label">เนื้อหา<span class="required">*</span>:</label>
+                    <textarea id="modalDetail" name="modalDetail" required readonly></textarea>
+                </div>
+                <div class="modal-field">
+                    <label for="modalStatus" class="modal-label">สถานะ<span class="required">*</span>:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="modalStatus">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="news-status <?php if ($status == 1) { echo 'news-status-green'; } else { echo 'news-status-gray'; } ?>"></span>
+                </div>
+                <div class="modal-field">
+                    <button type="button" onclick="closeModal()">ปิด</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="data.js"></script> <!-- เรียกใช้ไฟล์ JavaScript -->
+</body>
+</html>
